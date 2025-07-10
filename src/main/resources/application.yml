@@ -13,5 +13,5 @@ spring:
 logging:
   level:
     org:
-      hibernate: DEBUG
-      springframework: DEBUG
+      hibernate: WARN
+      springframework: WARN

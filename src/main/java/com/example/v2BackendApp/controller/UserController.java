@@ -1,7 +1,10 @@
 package com.example.v2BackendApp.controller;
 
+import com.example.v2BackendApp.model.User;
 import com.example.v2BackendApp.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -41,6 +44,11 @@ public class UserController {
      * of the UserRepository. The UserRepository is presumably an interface that extends Spring Data JPA's JpaRepository
      * or a similar interface, providing CRUD (Create, Read, Update, Delete) operations for the User entity.
      * */
+
+    @PostMapping("/user")
+    public User createUser(@RequestBody User user) {
+        return userRepository.save(user);
+    }
 
 
 }
